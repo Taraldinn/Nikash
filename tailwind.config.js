@@ -3,7 +3,9 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js"
+    "./node_modules/flowbite/**/*.js",
+    'node_modules/preline/dist/*.js',
+
 
   ],
   theme: {
@@ -23,6 +25,10 @@ export default {
         require('flowbite/plugin'),
         require('tailwind-scrollbar-hide'),
         require('@tailwindcss/aspect-ratio'),
+        require('preline/plugin'),
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/line-clamp'),
+        require('@tailwindcss/forms'),
 
 
   ],
