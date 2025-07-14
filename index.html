@@ -1674,14 +1674,20 @@
       });
       
       let currentImageIndex = 0;
-      const images = [
-        { src: 'src/assets/1.jpeg', alt: 'Project 1' },
-        { src: 'src/assets/2.jpeg', alt: 'Project 2' },
-        { src: 'src/assets/3.jpeg', alt: 'Project 3' },
-        { src: 'src/assets/4.jpeg', alt: 'Project 4' },
-        { src: 'src/assets/5.jpeg', alt: 'Project 5' },
-        { src: 'src/assets/nikash.png', alt: 'Project 6' }
-      ];
+      
+      // Build images array dynamically from the gallery items
+      const images = [];
+      galleryItems.forEach((item, index) => {
+        const img = item.querySelector('img');
+        if (img) {
+          images.push({
+            src: img.src,
+            alt: img.alt || `Project ${index + 1}`
+          });
+        }
+      });
+      
+      console.log('Gallery images loaded:', images);
       
       // Set total images count
       if (galleryTotal) {
