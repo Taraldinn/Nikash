@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Test</title>
+  <style>
+    .gallery-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .gallery-modal.active {
+      display: flex;
+    }
+    
+    .gallery-modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .gallery-modal img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      max-width: 90vw;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+    }
+    
+    .gallery-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .gallery-item {
+      cursor: pointer;
+      margin: 10px;
+      display: inline-block;
+    }
+    
+    .gallery-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery Test</h1>
+  
+  <div class="gallery-item" data-gallery-index="0">
+    <img src="src/assets/1.jpeg" alt="Project 1">
+  </div>
+  
+  <div class="gallery-item" data-gallery-index="1">
+    <img src="src/assets/2.jpeg" alt="Project 2">
+  </div>
+  
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="gallery-modal">
+    <div class="gallery-modal-content">
+      <button class="gallery-close" id="gallery-close">&times;</button>
+      <img id="gallery-image" src="" alt="Gallery Image">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const galleryModal = document.getElementById('gallery-modal');
+      const galleryImage = document.getElementById('gallery-image');
+      const galleryClose = document.getElementById('gallery-close');
+      
+      const images = [
+        { src: 'src/assets/1.jpeg', alt: 'Project 1' },
+        { src: 'src/assets/2.jpeg', alt: 'Project 2' }
+      ];
+      
+      let currentImageIndex = 0;
+      
+      console.log('Gallery items found:', galleryItems.length);
+      
+      // Open gallery when clicking on an image
+      galleryItems.forEach((item, index) => {
+        console.log('Setting up gallery item:', index);
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Gallery item clicked:', index);
+          currentImageIndex = index;
+          openGallery();
+        });
+      });
+      
+      // Close gallery
+      galleryClose.addEventListener('click', closeGallery);
+      
+      // Close gallery when clicking outside image
+      galleryModal.addEventListener('click', function(e) {
+        if (e.target === galleryModal) {
+          closeGallery();
+        }
+      });
+      
+      function openGallery() {
+        console.log('Opening gallery for image index:', currentImageIndex);
+        galleryModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateGalleryImage();
+      }
+      
+      function closeGallery() {
+        console.log('Closing gallery');
+        galleryModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      function updateGalleryImage() {
+        const image = images[currentImageIndex];
+        console.log('Loading image:', image.src);
+        galleryImage.src = image.src;
+        galleryImage.alt = image.alt;
+        
+        galleryImage.onerror = function() {
+          console.error('Failed to load image:', image.src);
+        };
+        
+        galleryImage.onload = function() {
+          console.log('Image loaded successfully:', image.src);
+        };
+      }
+    });
+  </script>
+</body>
+</html>

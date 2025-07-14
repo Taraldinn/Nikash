@@ -268,7 +268,161 @@
         margin-right: 4px !important; /* Match logo spacing */
       }
     }
-  </style>
+    
+    /* Gallery Modal Styles */
+    .gallery-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .gallery-modal.active {
+      display: flex;
+    }
+    
+    .gallery-modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .gallery-modal img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      max-width: 90vw;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+    }
+    
+    .gallery-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #333;
+      transition: background-color 0.2s;
+    }
+    
+    .gallery-close:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+    
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #333;
+      transition: background-color 0.2s;
+    }
+    
+    .gallery-nav:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+    
+    .gallery-nav:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .gallery-prev {
+      left: -60px;
+    }
+    
+    .gallery-next {
+      right: -60px;
+    }
+    
+    .gallery-counter {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-close {
+        top: 10px;
+        right: 10px;
+      }
+      
+      .gallery-prev {
+        left: 10px;
+      }
+      
+      .gallery-next {
+        right: 10px;
+      }        .gallery-counter {
+          bottom: 10px;
+        }
+      }
+      
+      /* Sticky Theme Toggle */
+      #sticky-theme-toggle {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      
+      #sticky-theme-toggle.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+      }
+      
+      /* Ensure theme toggle stays within layout bounds */
+      @media (min-width: 768px) {
+        #sticky-theme-toggle {
+          right: max(1.5rem, calc((100vw - 672px) / 2 + 1.5rem));
+        }
+      }
+      
+      @media (max-width: 767px) {
+        #sticky-theme-toggle {
+          right: 1rem;
+          bottom: 1rem;
+        }
+      }
+      
+      /* Contact Form Styles */
+      .contact-form-field:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+    </style>
 </head>
 
 <body class="dark:bg-neutral-900" style="max-width: 100vw; overflow-x: hidden;">
@@ -345,7 +499,7 @@
       <!-- 1. PROFILE SECTION (Most Important) -->
       <div class="flex items-center gap-x-3">
         <div class="shrink-0">
-          <img class="shrink-0 size-16 rounded-full" src="./src/assets/profile.jpg" alt="Avatar">
+          <img class="shrink-0 size-16 rounded-full" src="src/assets/profile.jpg" alt="Avatar">
         </div>
         <div class="grow">
           <h1 class="text-lg font-medium text-gray-800 dark:text-neutral-200">
@@ -449,7 +603,7 @@
               class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
               <div class="relative z-10 size-6 flex justify-center items-center">
                 <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
-                  src="./src/assets/PIS-logo.jpg" alt="Presidency International School Logo">
+                  src="src/assets/PIS-logo.jpg" alt="Presidency International School Logo">
               </div>
             </div>
             <div class="grow pb-8 group-last:pb-0">
@@ -498,13 +652,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <!-- Master's Degree -->
           <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <svg class="shrink-0 size-10 mb-3" width="400" height="400" viewBox="0 0 400 400" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H400V400H0V0Z" fill="white" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M137.052 140.91V150.537L114.437 154.193V144.697L137.052 140.91ZM137.052 154.794V272.378L114.437 261.589V158.557L137.052 154.794Z"
-                fill="#CC2229" />
-            </svg>
+            <img class="shrink-0 size-10 mb-3" width="40" height="40"
+              src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
             <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
               2023-2024
             </h3>
@@ -521,12 +670,8 @@
 
           <!-- Bachelor's Degree -->
           <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <svg class="shrink-0 size-10 mb-3" width="123" height="147" viewBox="0 0 123 147" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M0.828012 1.46997H121.918V47.216C121.918 68.122 114.052 112.626 61.889 145.746C61.889 145.746 5.17201 122.149 0.825012 47.216L0.828012 1.46997Z"
-                fill="#A51C30" />
-            </svg>
+            <img class="shrink-0 size-10 mb-3" width="40" height="40"
+              src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
             <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
               2021
             </h3>
@@ -849,9 +994,9 @@
         </h2>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          <a class="group block relative overflow-hidden rounded-lg" href="#">
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="0">
             <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="./src/assets/1.jpeg" alt="Project">
+              src="src/assets/1.jpeg" alt="Project 1">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
               <div
                 class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
@@ -864,11 +1009,11 @@
                 <span class="text-xs">View</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="group block relative overflow-hidden rounded-lg" href="#">
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="1">
             <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="./src/assets/2.jpeg" alt="Project">
+              src="src/assets/2.jpeg" alt="Project 2">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
               <div
                 class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
@@ -881,11 +1026,11 @@
                 <span class="text-xs">View</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="group block relative overflow-hidden rounded-lg" href="#">
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="2">
             <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="./src/assets/3.jpeg" alt="Project">
+              src="src/assets/3.jpeg" alt="Project 3">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
               <div
                 class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
@@ -898,7 +1043,71 @@
                 <span class="text-xs">View</span>
               </div>
             </div>
-          </a>
+          </div>
+
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="3">
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+              src="src/assets/4.jpeg" alt="Project 4">
+            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+              <div
+                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <span class="text-xs">View</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="4">
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+              src="src/assets/5.jpeg" alt="Project 5">
+            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+              <div
+                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <span class="text-xs">View</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="5">
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+              src="src/assets/nikash.png" alt="Project 6">
+            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+              <div
+                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <span class="text-xs">View</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-modal-content">
+          <button class="gallery-close" id="gallery-close">&times;</button>
+          <button class="gallery-nav gallery-prev" id="gallery-prev">‹</button>
+          <button class="gallery-nav gallery-next" id="gallery-next">›</button>
+          <img id="gallery-image" src="" alt="Gallery Image">
+          <div class="gallery-counter">
+            <span id="gallery-current">1</span> / <span id="gallery-total">6</span>
+          </div>
         </div>
       </div>
 
@@ -1017,107 +1226,146 @@
         </ul>
       </div>
 
-      <!-- 12. SUBSCRIBE/CONTACT -->
+      <!-- 12. CONTACT FORM -->
       <div class="my-10 sm:my-14" id="contact">
         <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
           Get In Touch
         </h2>
 
-        <form>
-          <div
-            class="p-1.5 flex flex-col sm:flex-row items-center gap-2 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <div class="relative w-full">
-              <label for="hero-input" class="sr-only">Subscribe</label>
-              <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3">
-                <svg class="shrink-0 size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
+        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8 max-w-2xl">
+          Feel free to reach out for collaboration opportunities, academic discussions, or any inquiries. I'd love to hear from you!
+        </p>
+
+        <!-- Contact Form -->
+        <div class="max-w-2xl">
+          <form id="contact-form" class="space-y-4">
+              <!-- Name Field -->
+              <div>
+                <label for="contact-name" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                  Full Name *
+                </label>
+                <input type="text" id="contact-name" name="name" required
+                  class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-gray-500 focus:ring-1 focus:ring-gray-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:focus:border-neutral-500"
+                  placeholder="Your full name">
               </div>
-              <input type="text" id="hero-input" name="hero-input"
-                class="py-2 ps-9 pe-3 block w-full border-transparent rounded-lg text-sm focus:border-transparent focus:ring-transparent disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500"
-                placeholder="Enter your email">
-            </div>
-            <a class="w-full sm:w-auto whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200"
-              href="#">
-              Contact
-              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+
+              <!-- Email Field -->
+              <div>
+                <label for="contact-email" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                  Email Address *
+                </label>
+                <input type="email" id="contact-email" name="email" required
+                  class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-gray-500 focus:ring-1 focus:ring-gray-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:focus:border-neutral-500"
+                  placeholder="your.email@example.com">
+              </div>
+
+              <!-- Subject Field -->
+              <div>
+                <label for="contact-subject" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                  Subject
+                </label>
+                <input type="text" id="contact-subject" name="subject"
+                  class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-gray-500 focus:ring-1 focus:ring-gray-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:focus:border-neutral-500"
+                  placeholder="What's this about?">
+              </div>
+
+              <!-- Message Field -->
+              <div>
+                <label for="contact-message" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                  Message *
+                </label>
+                <textarea id="contact-message" name="message" rows="5" required
+                  class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-gray-500 focus:ring-1 focus:ring-gray-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:focus:border-neutral-500 resize-none"
+                  placeholder="Your message here..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div>
+                <button type="submit" id="contact-submit"
+                  class="w-full inline-flex justify-center items-center gap-x-2 py-3 px-4 text-sm font-semibold rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200 dark:focus:bg-neutral-200 transition-colors">
+                  <span id="submit-text">Send Message</span>
+                  <svg id="submit-icon" class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                  <div id="submit-loading" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
+                </button>
+              </div>
+
+              <!-- Success/Error Messages -->
+              <div id="contact-message-success" class="hidden p-3 bg-green-100 border border-green-200 text-green-800 rounded-lg text-sm dark:bg-green-900/20 dark:border-green-900/30 dark:text-green-400">
+                Thank you! Your message has been sent successfully. I'll get back to you soon.
+              </div>
+              
+              <div id="contact-message-error" class="hidden p-3 bg-red-100 border border-red-200 text-red-800 rounded-lg text-sm dark:bg-red-900/20 dark:border-red-900/30 dark:text-red-400">
+                Sorry, there was an error sending your message. Please try again or contact me directly via email.
+              </div>
+            </form>
           </div>
-          <p class="mt-2 text-xs text-gray-500 dark:text-neutral-500">
-            Feel free to reach out for collaboration opportunities.
-          </p>
-        </form>
+        </div>
       </div>
+
+      <!-- ========== FOOTER ========== -->
+      <footer class="mt-10 sm:mt-14">
+        <div class="py-6 border-t border-gray-200 dark:border-neutral-700">
+          <div class="flex flex-wrap justify-between items-center gap-2">
+            <div>
+              <p class="text-xs text-gray-600 dark:text-neutral-400">
+                © 2024 Md. Mahadi Rahman.
+              </p>
+            </div>
+
+            <ul class="flex flex-wrap items-center">
+              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+                <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                  href="https://www.linkedin.com/in/mdmahadirahman" target="_blank">
+                  LinkedIn
+                </a>
+              </li>
+              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+                <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                  href="mailto:memahadirahman@gmail.com">
+                  Email
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="">
-    <div class="py-6 border-t border-gray-200 dark:border-neutral-700">
-      <div class="flex flex-wrap justify-between items-center gap-2">
-        <div>
-          <p class="text-xs text-gray-600 dark:text-neutral-400">
-            © 2024 Md. Mahadi Rahman.
-          </p>
-        </div>
-
-        <ul class="flex flex-wrap items-center">
-          <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
-            <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-              href="#">
-              LinkedIn
-            </a>
-          </li>
-          <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
-            <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-              href="#">
-              Email
-            </a>
-          </li>
-          <li class="inline-block">
-            <!-- Dark Mode -->
-            <button type="button"
-              class="hs-dark-mode hs-dark-mode-active:hidden relative flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-              data-hs-theme-click-value="dark">
-              <span class="sr-only">Dark</span>
-              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-              </svg>
-            </button>
-            <button type="button"
-              class="hs-dark-mode hs-dark-mode-active:flex hidden relative justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-              data-hs-theme-click-value="light">
-              <span class="sr-only">Light</span>
-              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4"></circle>
-                <path d="M12 2v2"></path>
-                <path d="M12 20v2"></path>
-                <path d="m4.93 4.93 1.41 1.41"></path>
-                <path d="m17.66 17.66 1.41 1.41"></path>
-                <path d="M2 12h2"></path>
-                <path d="M20 12h2"></path>
-                <path d="m6.34 17.66-1.41 1.41"></path>
-                <path d="m19.07 4.93-1.41 1.41"></path>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </div>
+  <!-- Sticky Theme Toggle -->
+  <div id="sticky-theme-toggle" class="fixed bottom-6 right-6 z-40 transition-all duration-300">
+    <div class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+      <!-- Dark Mode Button (shows in light mode) -->
+      <button type="button" id="theme-dark-btn"
+        class="flex justify-center items-center w-8 h-8 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700"
+        title="Switch to dark mode">
+        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+      
+      <!-- Light Mode Button (shows in dark mode) -->
+      <button type="button" id="theme-light-btn"
+        class="hidden justify-center items-center w-8 h-8 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700"
+        title="Switch to light mode">
+        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+      </button>
     </div>
-  </footer>
+  </div>
   </div> <!-- End of main container wrapper -->
 
   <!-- JS Implementing Plugins -->
@@ -1402,6 +1650,332 @@
             });
           }
         });
+      }
+    });
+    
+    // Gallery functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const galleryModal = document.getElementById('gallery-modal');
+      const galleryImage = document.getElementById('gallery-image');
+      const galleryClose = document.getElementById('gallery-close');
+      const galleryPrev = document.getElementById('gallery-prev');
+      const galleryNext = document.getElementById('gallery-next');
+      const galleryCurrent = document.getElementById('gallery-current');
+      const galleryTotal = document.getElementById('gallery-total');
+      
+      console.log('Gallery initialization:', {
+        galleryItems: galleryItems.length,
+        galleryModal: !!galleryModal,
+        galleryImage: !!galleryImage,
+        galleryClose: !!galleryClose,
+        galleryPrev: !!galleryPrev,
+        galleryNext: !!galleryNext
+      });
+      
+      let currentImageIndex = 0;
+      const images = [
+        { src: 'src/assets/1.jpeg', alt: 'Project 1' },
+        { src: 'src/assets/2.jpeg', alt: 'Project 2' },
+        { src: 'src/assets/3.jpeg', alt: 'Project 3' },
+        { src: 'src/assets/4.jpeg', alt: 'Project 4' },
+        { src: 'src/assets/5.jpeg', alt: 'Project 5' },
+        { src: 'src/assets/nikash.png', alt: 'Project 6' }
+      ];
+      
+      // Set total images count
+      if (galleryTotal) {
+        galleryTotal.textContent = images.length;
+      }
+      
+      // Open gallery when clicking on an image
+      galleryItems.forEach((item, index) => {
+        console.log('Setting up gallery item:', index);
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Gallery item clicked:', index);
+          currentImageIndex = index;
+          openGallery();
+        });
+      });
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentImageIndex = index;
+          openGallery();
+        });
+      });
+      
+      // Close gallery
+      if (galleryClose) {
+        galleryClose.addEventListener('click', closeGallery);
+      }
+      
+      // Close gallery when clicking outside image
+      if (galleryModal) {
+        galleryModal.addEventListener('click', function(e) {
+          if (e.target === galleryModal) {
+            closeGallery();
+          }
+        });
+      }
+      
+      // Previous image
+      if (galleryPrev) {
+        galleryPrev.addEventListener('click', function() {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          updateGalleryImage();
+        });
+      }
+      
+      // Next image
+      if (galleryNext) {
+        galleryNext.addEventListener('click', function() {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          updateGalleryImage();
+        });
+      }
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (!galleryModal.classList.contains('active')) return;
+        
+        switch(e.key) {
+          case 'Escape':
+            closeGallery();
+            break;
+          case 'ArrowLeft':
+            galleryPrev.click();
+            break;
+          case 'ArrowRight':
+            galleryNext.click();
+            break;
+        }
+      });
+      
+      function openGallery() {
+        console.log('Opening gallery for image index:', currentImageIndex);
+        if (galleryModal) {
+          galleryModal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          updateGalleryImage();
+        }
+      }
+      
+      function closeGallery() {
+        console.log('Closing gallery');
+        if (galleryModal) {
+          galleryModal.classList.remove('active');
+          document.body.style.overflow = ''; // Restore scrolling
+        }
+      }
+      
+      function updateGalleryImage() {
+        const image = images[currentImageIndex];
+        console.log('Loading image:', image.src);
+        
+        if (galleryImage) {
+          galleryImage.src = image.src;
+          galleryImage.alt = image.alt;
+        }
+        
+        if (galleryCurrent) {
+          galleryCurrent.textContent = currentImageIndex + 1;
+        }
+        
+        // Add error handling
+        if (galleryImage) {
+          galleryImage.onerror = function() {
+            console.error('Failed to load image:', image.src);
+          };
+          
+          galleryImage.onload = function() {
+            console.log('Image loaded successfully:', image.src);
+          };
+        }
+        
+        // Update navigation buttons
+        if (galleryPrev) galleryPrev.disabled = false;
+        if (galleryNext) galleryNext.disabled = false;
+      }
+    });
+    
+    // Contact Form Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('contact-submit');
+      const submitText = document.getElementById('submit-text');
+      const submitIcon = document.getElementById('submit-icon');
+      const submitLoading = document.getElementById('submit-loading');
+      const successMessage = document.getElementById('contact-message-success');
+      const errorMessage = document.getElementById('contact-message-error');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(contactForm);
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const subject = formData.get('subject') || 'Contact from Portfolio';
+          const message = formData.get('message');
+          
+          // Validate required fields
+          if (!name || !email || !message) {
+            showError('Please fill in all required fields.');
+            return;
+          }
+          
+          // Validate email format
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            showError('Please enter a valid email address.');
+            return;
+          }
+          
+          // Show loading state
+          setSubmitState('loading');
+          hideMessages();
+          
+          try {
+            // Send data to API endpoint
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+              })
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+              // Success
+              showSuccess('Thank you! Your message has been sent successfully. I\'ll get back to you soon.');
+              contactForm.reset();
+            } else {
+              // API returned an error
+              throw new Error(result.error || result.details || 'Failed to send message');
+            }
+            
+          } catch (error) {
+            console.error('Error sending message:', error);
+            showError('Sorry, there was an error sending your message. Please try again or contact me directly via email.');
+          } finally {
+            setSubmitState('idle');
+          }
+        });
+      }
+      
+      function setSubmitState(state) {
+        if (!submitBtn || !submitText || !submitIcon || !submitLoading) return;
+        
+        switch (state) {
+          case 'loading':
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            submitIcon.style.display = 'none';
+            submitLoading.style.display = 'inline-block';
+            break;
+          case 'idle':
+          default:
+            submitBtn.disabled = false;
+            submitText.textContent = 'Send Message';
+            submitIcon.style.display = 'inline-block';
+            submitLoading.style.display = 'none';
+            break;
+        }
+      }
+      
+      function showSuccess(message) {
+        if (successMessage) {
+          successMessage.textContent = message;
+          successMessage.classList.remove('hidden');
+        }
+      }
+      
+      function showError(message) {
+        if (errorMessage) {
+          errorMessage.textContent = message;
+          errorMessage.classList.remove('hidden');
+        }
+      }
+      
+      function hideMessages() {
+        if (successMessage) successMessage.classList.add('hidden');
+        if (errorMessage) errorMessage.classList.add('hidden');
+      }
+    });
+    
+    // Sticky Theme Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const stickyToggle = document.getElementById('sticky-theme-toggle');
+      const footer = document.querySelector('footer');
+      
+      if (stickyToggle && footer) {
+        // Hide/show theme toggle based on footer visibility
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Footer is visible, hide the sticky toggle
+              stickyToggle.classList.add('hidden');
+            } else {
+              // Footer is not visible, show the sticky toggle
+              stickyToggle.classList.remove('hidden');
+            }
+          });
+        }, {
+          rootMargin: '50px'
+        });
+        
+        observer.observe(footer);
+        
+        // Add click handlers for the sticky theme toggle
+        const darkBtn = document.getElementById('theme-dark-btn');
+        const lightBtn = document.getElementById('theme-light-btn');
+        
+        if (darkBtn) {
+          darkBtn.addEventListener('click', function() {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('hs_theme', 'dark');
+            updateThemeButtons();
+          });
+        }
+        
+        if (lightBtn) {
+          lightBtn.addEventListener('click', function() {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('hs_theme', 'light');
+            updateThemeButtons();
+          });
+        }
+        
+        function updateThemeButtons() {
+          const isDark = document.documentElement.classList.contains('dark');
+          
+          if (isDark) {
+            // In dark mode: hide dark button, show light button
+            darkBtn.classList.add('hidden');
+            darkBtn.classList.remove('flex');
+            lightBtn.classList.remove('hidden');
+            lightBtn.classList.add('flex');
+          } else {
+            // In light mode: show dark button, hide light button
+            darkBtn.classList.remove('hidden');
+            darkBtn.classList.add('flex');
+            lightBtn.classList.add('hidden');
+            lightBtn.classList.remove('flex');
+          }
+        }
+        
+        // Initialize theme button state
+        updateThemeButtons();
       }
     });
   </script>
