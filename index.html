@@ -50,7 +50,7 @@
 
   <!-- CSS Preline -->
   <link rel="stylesheet" href="https://preline.co/assets/css/main.min.css">
-  
+
   <!-- Custom CSS for mobile menu fix -->
   <style>
     /* Logo Circle Styling */
@@ -58,7 +58,8 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background-color: rgb(31 41 55); /* Dark background for light theme */
+      background-color: rgb(31 41 55);
+      /* Dark background for light theme */
       color: white;
       display: flex;
       align-items: center;
@@ -68,7 +69,7 @@
       letter-spacing: 0.5px;
       transition: all 0.2s ease-in-out;
     }
-    
+
     /* Mobile logo sizing */
     @media (max-width: 767px) {
       .logo-circle {
@@ -77,64 +78,66 @@
         font-size: 16px;
       }
     }
-    
+
     /* Dark theme logo styling */
     .dark .logo-circle {
-      background-color: rgb(229 231 235); /* Light background for dark theme */
-      color: rgb(31 41 55); /* Dark text for dark theme */
+      background-color: rgb(229 231 235);
+      /* Light background for dark theme */
+      color: rgb(31 41 55);
+      /* Dark text for dark theme */
     }
-    
+
     /* Hover effects */
     .logo-circle:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-    
+
     .dark .logo-circle:hover {
       box-shadow: 0 4px 12px rgba(229, 231, 235, 0.15);
     }
-    
+
     /* Ensure navbar is visible */
     nav {
       background: white;
       border: 1px solid rgb(229 231 235);
     }
-    
+
     .dark nav {
       background: rgb(23 23 23);
       border-color: rgb(64 64 64);
     }
-    
+
     /* Ensure navigation links are visible */
     .nav-link {
       display: block;
       color: rgb(107 114 128);
     }
-    
+
     .nav-link:hover {
       color: rgb(31 41 55);
     }
-    
+
     .dark .nav-link {
       color: rgb(156 163 175);
     }
-    
+
     .dark .nav-link:hover {
       color: rgb(229 231 235);
     }
-    
+
     /* Active link styling */
     .nav-link[aria-current="page"] {
       color: rgb(31 41 55);
       font-weight: 500;
       border-bottom-color: rgb(31 41 55);
     }
-    
+
     .dark .nav-link[aria-current="page"] {
       color: rgb(229 231 235);
       border-bottom-color: rgb(229 231 235);
     }
-    
+
     /* Ensure desktop navigation is always visible */
     @media (min-width: 768px) {
       #hs-navbar-header-floating {
@@ -143,32 +146,33 @@
         opacity: 1 !important;
         visibility: visible !important;
       }
-      
+
       #hs-navbar-header-floating .flex {
         display: flex !important;
       }
     }
-    
+
     /* Mobile navigation control */
     @media (max-width: 767px) {
       #hs-navbar-header-floating.hidden {
         display: none;
       }
-      
+
       #hs-navbar-header-floating.block {
         display: block;
       }
     }
-    
+
     /* Force show navigation links on desktop */
     @media (min-width: 768px) {
+
       /* Ensure navigation container is flex on desktop */
       nav.md\:flex {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
       }
-      
+
       /* Make sure all navigation elements are visible */
       #hs-navbar-header-floating,
       #hs-navbar-header-floating.hidden {
@@ -177,45 +181,45 @@
         opacity: 1 !important;
         visibility: visible !important;
       }
-      
+
       /* Make sure navigation links container is visible */
       #hs-navbar-header-floating .flex {
         display: flex !important;
       }
     }
-    
+
     /* Override Preline height behavior for mobile menu */
     #hs-navbar-header-floating.block {
       height: auto !important;
     }
-    
+
     #hs-navbar-header-floating.hidden {
       height: 0 !important;
       overflow: hidden;
     }
-    
+
     /* Smooth transitions for mobile menu */
     #hs-navbar-header-floating {
       transition: height 0.3s ease-in-out;
     }
-    
+
     /* Ensure mobile menu is visible when open */
-    .hs-collapse-open ~ #hs-navbar-header-floating {
+    .hs-collapse-open~#hs-navbar-header-floating {
       height: auto !important;
     }
-    
+
     /* Remove rounded borders when mobile menu is open */
     @media (max-width: 768px) {
       nav.mobile-menu-open {
         border-radius: 1rem !important;
         border: 1px solid rgb(229 231 235) !important;
       }
-      
+
       nav.mobile-menu-open .dark\:border-neutral-700 {
         border-color: rgb(64 64 64) !important;
       }
     }
-    
+
     /* Better mobile menu styling */
     @media (max-width: 768px) {
       #hs-navbar-header-floating.block {
@@ -223,52 +227,59 @@
         margin-top: 0.5rem;
         padding-top: 0.5rem;
       }
+
       .dark #hs-navbar-header-floating.block {
         border-top-color: rgb(64 64 64);
       }
     }
-    
+
     /* Logo positioning - consistent spacing across devices */
     .logo-container {
       margin-left: 4px !important;
       position: relative;
     }
-    
+
     @media (min-width: 768px) {
+
       /* Force navigation spacing on desktop */
       #hs-navbar-header-floating {
         flex: 1 !important;
         margin-left: auto !important;
       }
-      
-      #hs-navbar-header-floating > div {
+
+      #hs-navbar-header-floating>div {
         width: 100% !important;
         justify-content: flex-end !important;
-        padding-right: 12px !important; /* Space from right border on desktop */
+        padding-right: 12px !important;
+        /* Space from right border on desktop */
       }
     }
-    
+
     /* Mobile responsive spacing - match desktop structure */
     @media (max-width: 767px) {
+
       /* Override nav padding on mobile to match desktop height */
       nav {
         padding-top: 4px !important;
         padding-bottom: 4px !important;
       }
-      
-      #hs-navbar-header-floating > div {
-        padding-right: 12px !important; /* Same as desktop */
-        padding-left: 12px !important; /* Same padding structure */
+
+      #hs-navbar-header-floating>div {
+        padding-right: 12px !important;
+        /* Same as desktop */
+        padding-left: 12px !important;
+        /* Same padding structure */
       }
-      
+
       /* Mobile toggle button positioning */
       .hs-collapse-toggle {
         width: 28px !important;
         height: 28px !important;
-        margin-right: 4px !important; /* Match logo spacing */
+        margin-right: 4px !important;
+        /* Match logo spacing */
       }
     }
-    
+
     /* Gallery Modal Styles */
     .gallery-modal {
       position: fixed;
@@ -283,17 +294,17 @@
       justify-content: center;
       padding: 20px;
     }
-    
+
     .gallery-modal.active {
       display: flex;
     }
-    
+
     .gallery-modal-content {
       position: relative;
       max-width: 90%;
       max-height: 90%;
     }
-    
+
     .gallery-modal img {
       width: 100%;
       height: auto;
@@ -303,7 +314,7 @@
       border-radius: 8px;
       display: block;
     }
-    
+
     .gallery-close {
       position: absolute;
       top: -40px;
@@ -321,11 +332,11 @@
       color: #333;
       transition: background-color 0.2s;
     }
-    
+
     .gallery-close:hover {
       background: rgba(255, 255, 255, 1);
     }
-    
+
     .gallery-nav {
       position: absolute;
       top: 50%;
@@ -343,24 +354,24 @@
       color: #333;
       transition: background-color 0.2s;
     }
-    
+
     .gallery-nav:hover {
       background: rgba(255, 255, 255, 1);
     }
-    
+
     .gallery-nav:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
-    
+
     .gallery-prev {
       left: -60px;
     }
-    
+
     .gallery-next {
       right: -60px;
     }
-    
+
     .gallery-counter {
       position: absolute;
       bottom: -40px;
@@ -372,873 +383,923 @@
       font-size: 14px;
       color: #333;
     }
-    
+
     @media (max-width: 768px) {
       .gallery-close {
         top: 10px;
         right: 10px;
       }
-      
+
       .gallery-prev {
         left: 10px;
       }
-      
+
       .gallery-next {
         right: 10px;
-      }        .gallery-counter {
-          bottom: 10px;
-        }
       }
-      
-      /* Sticky Theme Toggle */
+
+      .gallery-counter {
+        bottom: 10px;
+      }
+    }
+
+    /* Sticky Theme Toggle */
+    #sticky-theme-toggle {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #sticky-theme-toggle.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    /* Ensure theme toggle stays within layout bounds */
+    @media (min-width: 768px) {
       #sticky-theme-toggle {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        right: max(1.5rem, calc((100vw - 672px) / 2 + 1.5rem));
       }
-      
-      #sticky-theme-toggle.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(20px);
+    }
+
+    @media (max-width: 767px) {
+      #sticky-theme-toggle {
+        right: 1rem;
+        bottom: 1rem;
       }
-      
-      /* Ensure theme toggle stays within layout bounds */
-      @media (min-width: 768px) {
-        #sticky-theme-toggle {
-          right: max(1.5rem, calc((100vw - 672px) / 2 + 1.5rem));
-        }
-      }
-      
-      @media (max-width: 767px) {
-        #sticky-theme-toggle {
-          right: 1rem;
-          bottom: 1rem;
-        }
-      }
-      
-      /* Contact Form Styles */
-      .contact-form-field:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-      }
-    </style>
+    }
+
+    /* Contact Form Styles */
+    .contact-form-field:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  </style>
 </head>
 
 <body class="dark:bg-neutral-900" style="max-width: 100vw; overflow-x: hidden;">
   <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-  <!-- ========== HEADER ========== -->
-  <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-    <nav
-      class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-full py-2.5 md:flex md:items-center md:justify-between md:py-0 dark:bg-neutral-900 dark:border-neutral-700">
-      <div class="md:px-0 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="logo-container">
-          <a class="flex-none rounded-md inline-block font-semibold focus:outline-none focus:opacity-80"
-            href="../../templates/personal/index.html" aria-label="Mahadi">
-            <div class="logo-circle">
-              M
-            </div>
-          </a>
-        </div>
-        <!-- End Logo -->
+    <!-- ========== HEADER ========== -->
+    <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+      <nav
+        class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-full py-2.5 md:flex md:items-center md:justify-between md:py-0 dark:bg-neutral-900 dark:border-neutral-700">
+        <div class="md:px-0 flex justify-between items-center">
+          <!-- Logo -->
+          <div class="logo-container">
+            <a class="flex-none rounded-md inline-block font-semibold focus:outline-none focus:opacity-80"
+              href="../../templates/personal/index.html" aria-label="Mahadi">
+              <div class="logo-circle">
+                M
+              </div>
+            </a>
+          </div>
+          <!-- End Logo -->
 
-        <div class="md:hidden">
-          <!-- Toggle Button -->
-          <button type="button"
-            class="hs-collapse-toggle flex justify-center items-center size-6 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-            id="hs-navbar-header-floating-collapse" aria-expanded="false" aria-controls="hs-navbar-header-floating"
-            aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-header-floating">
-            <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="3" x2="21" y1="6" y2="6" />
-              <line x1="3" x2="21" y1="12" y2="12" />
-              <line x1="3" x2="21" y1="18" y2="18" />
-            </svg>
-            <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
-              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </button>
-          <!-- End Toggle Button -->
+          <div class="md:hidden">
+            <!-- Toggle Button -->
+            <button type="button"
+              class="hs-collapse-toggle flex justify-center items-center size-6 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+              id="hs-navbar-header-floating-collapse" aria-expanded="false" aria-controls="hs-navbar-header-floating"
+              aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-header-floating">
+              <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6" />
+                <line x1="3" x2="21" y1="12" y2="12" />
+                <line x1="3" x2="21" y1="18" y2="18" />
+              </svg>
+              <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+            <!-- End Toggle Button -->
+          </div>
         </div>
-      </div>
 
-      <div id="hs-navbar-header-floating"
-        class="hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block hidden"
-        aria-labelledby="hs-navbar-header-floating-collapse">
-        <div
-          class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:pr-4">
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium text-gray-800 focus:outline-none dark:border-neutral-200 dark:text-neutral-200 text-xs"
-            href="#home" aria-current="page">Home</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#experience">Experience</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#education">Education</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#skills">Skills</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#achievements">Awards</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#projects">Projects</a>
-          <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
-            href="#contact">Contact</a>
+        <div id="hs-navbar-header-floating"
+          class="hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block hidden"
+          aria-labelledby="hs-navbar-header-floating-collapse">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:pr-4">
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium text-gray-800 focus:outline-none dark:border-neutral-200 dark:text-neutral-200 text-xs"
+              href="#home" aria-current="page">Home</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#experience">Experience</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#education">Education</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#skills">Skills</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#achievements">Awards</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#projects">Projects</a>
+            <a class="nav-link py-3 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 text-xs"
+              href="#contact">Contact</a>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <!-- ========== END HEADER ========== -->
+      </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content">
-    <div class="pt-10 md:pt-16" id="home">
-      
-      <!-- 1. PROFILE SECTION (Most Important) -->
-      <div class="flex items-center gap-x-3">
-        <div class="shrink-0">
-          <img class="shrink-0 size-16 rounded-full" src="src/assets/profile.jpg" alt="Avatar">
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content">
+      <div class="pt-10 md:pt-16" id="home">
+
+        <!-- 1. PROFILE SECTION (Most Important) -->
+        <div class="flex items-center gap-x-3">
+          <div class="shrink-0">
+            <img class="shrink-0 size-16 rounded-full" src="src/assets/profile.jpg" alt="Avatar">
+          </div>
+          <div class="grow">
+            <h1 class="text-lg font-medium text-gray-800 dark:text-neutral-200">
+              Md. Mahadi Rahman
+            </h1>
+            <p class="text-sm text-gray-600 dark:text-neutral-400">
+              Lecturer, Premier University Chittagong
+            </p>
+          </div>
         </div>
-        <div class="grow">
-          <h1 class="text-lg font-medium text-gray-800 dark:text-neutral-200">
-            Md. Mahadi Rahman
-          </h1>
+
+        <!-- 2. ABOUT/SUMMARY SECTION -->
+        <div class="mt-8">
+          <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">Professional Summary</h2>
           <p class="text-sm text-gray-600 dark:text-neutral-400">
-            Lecturer, Premier University Chittagong
+            Dynamic and results-driven English Language and Literature lecturer with a proven track record
+            in both academic and professional environments. Holding an M.A. in TESOL and B.A. (HONS.)
+            in English Language and Literature, with distinguished accolades for academic and
+            extracurricular achievements.
           </p>
+          <p class="mt-3 text-sm text-gray-600 dark:text-neutral-400">
+            Passionate about fostering a love for language and literature, I aim
+            to leverage my experience in diverse educational settings to inspire and educate students.
+            Seeking an opportunity to contribute to a forward-thinking institution where I can utilize my
+            skills in curriculum development, innovative teaching methodologies, and holistic student
+            mentorship to drive academic success and personal growth.
+          </p>
+
+          <!-- Contact Information -->
+          <ul class="mt-5 flex flex-col gap-y-3">
+            <li class="flex items-center gap-x-2.5">
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <a class="text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                href="mailto:memahadirahman@gmail.com">
+                memahadirahman@gmail.com
+              </a>
+            </li>
+            <li class="flex items-center gap-x-2.5">
+              <svg class="shrink-0 size-3.5" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.1881 10.1624L22.7504 0H20.7214L13.2868 8.82385L7.34878 0H0.5L9.47944 13.3432L0.5 24H2.5291L10.3802 14.6817L16.6512 24H23.5L14.1881 10.1624ZM11.409 13.4608L3.26021 1.55962H6.37679L20.7224 22.5113H17.6058L11.409 13.4613V13.4608Z"
+                  fill="currentColor" />
+              </svg>
+              <a class="text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                href="https://www.linkedin.com/in/mdmahadirahman">
+                LinkedIn Profile
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <!-- 2. ABOUT/SUMMARY SECTION -->
-      <div class="mt-8">
-        <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">Professional Summary</h2>
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
-          Dynamic and results-driven English Language and Literature lecturer with a proven track record
-          in both academic and professional environments. Holding an M.A. in TESOL and B.A. (HONS.)
-          in English Language and Literature, with distinguished accolades for academic and
-          extracurricular achievements.
-        </p>
-        <p class="mt-3 text-sm text-gray-600 dark:text-neutral-400">
-          Passionate about fostering a love for language and literature, I aim
-          to leverage my experience in diverse educational settings to inspire and educate students.
-          Seeking an opportunity to contribute to a forward-thinking institution where I can utilize my
-          skills in curriculum development, innovative teaching methodologies, and holistic student
-          mentorship to drive academic success and personal growth.
-        </p>
+        <!-- 3. WORK EXPERIENCE SECTION -->
+        <div class="mt-10 sm:mt-14" id="experience">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Work Experience
+          </h2>
 
-        <!-- Contact Information -->
-        <ul class="mt-5 flex flex-col gap-y-3">
-          <li class="flex items-center gap-x-2.5">
-            <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            <a class="text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-              href="mailto:memahadirahman@gmail.com">
-              memahadirahman@gmail.com
-            </a>
-          </li>
-          <li class="flex items-center gap-x-2.5">
-            <svg class="shrink-0 size-3.5" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M14.1881 10.1624L22.7504 0H20.7214L13.2868 8.82385L7.34878 0H0.5L9.47944 13.3432L0.5 24H2.5291L10.3802 14.6817L16.6512 24H23.5L14.1881 10.1624ZM11.409 13.4608L3.26021 1.55962H6.37679L20.7224 22.5113H17.6058L11.409 13.4613V13.4608Z"
-                fill="currentColor" />
-            </svg>
-            <a class="text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-              href="https://www.linkedin.com/in/mdmahadirahman">
-              LinkedIn Profile
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 3. WORK EXPERIENCE SECTION -->
-      <div class="mt-10 sm:mt-14" id="experience">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Work Experience
-        </h2>
-
-        <!-- Timeline -->
-        <div>
-          <!-- Current Position -->
-          <div class="group relative flex gap-x-5">
-            <div
-              class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-              <div class="relative z-10 size-6 flex justify-center items-center">
-                <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
-                  src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
-              </div>
-            </div>
-            <div class="grow pb-8 group-last:pb-0">
-              <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-                2023 - Present
-              </h3>
-              <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
-                Lecturer, Premier University Chittagong
-              </p>
-              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-                Teaching English Language and Literature to undergraduate students with focus on innovative pedagogical approaches.
-              </p>
-              <ul class="list-disc ms-6 mt-3 space-y-1.5">
-                <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
-                  Developed and delivered comprehensive English language curriculum
-                </li>
-                <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
-                  Mentored students in academic and extracurricular activities
-                </li>
-                <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
-                  Conducted research in TESOL methodologies
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Previous Position -->
-          <div class="group relative flex gap-x-5">
-            <div
-              class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-              <div class="relative z-10 size-6 flex justify-center items-center">
-                <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
-                  src="src/assets/PIS-logo.jpg" alt="Presidency International School Logo">
-              </div>
-            </div>
-            <div class="grow pb-8 group-last:pb-0">
-              <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-                May 5, 2024 - October 31, 2024
-              </h3>
-              <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
-                CAIE English Language Teacher, Presidency International School
-              </p>
-              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-                Taught Cambridge Assessment International Education (CAIE) English Language curriculum to secondary students.
-              </p>
-            </div>
-          </div>
-
-          <!-- Previous Position -->
-          <div class="group relative flex gap-x-5">
-            <div
-              class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-              <div class="relative z-10 size-6 flex justify-center items-center">
-                <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
-                  src="https://alhidaayah.edu.bd/img/header-img.png" alt="Al-Hidaayah International School Logo">
-              </div>
-            </div>
-            <div class="grow pb-8 group-last:pb-0">
-              <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-                January 22, 2023 - April 27, 2024
-              </h3>
-              <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
-                CAIE English Language Teacher, Al-Hidaayah International School
-              </p>
-              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-                Delivered comprehensive English language instruction following Cambridge international curriculum standards.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. EDUCATION SECTION -->
-      <div class="mt-10 sm:mt-14" id="education">
-        <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
-          Education
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <!-- Master's Degree -->
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <img class="shrink-0 size-10 mb-3" width="40" height="40"
-              src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
-            <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-              2023-2024
-            </h3>
-            <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
-              M.A. (TESOL) in Teaching English to Speakers of Other Languages
-            </p>
-            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-              Premier University, Chattogram
-            </p>
-            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-              Result: 3.62
-            </p>
-          </div>
-
-          <!-- Bachelor's Degree -->
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <img class="shrink-0 size-10 mb-3" width="40" height="40"
-              src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
-            <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-              2021
-            </h3>
-            <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
-              B.A. (HONS.) in English Language and Literature
-            </p>
-            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-              Premier University, Chattogram
-            </p>
-            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-              Result: 3.82
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. SKILLS SECTION -->
-      <div class="my-10 sm:my-14" id="skills">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Skills
-        </h2>
-
-        <div class="space-y-3">
-          <dl class="flex flex-col sm:flex-row gap-1">
-            <dt class="min-w-40">
-              <span class="block text-sm text-gray-500 dark:text-neutral-500">Teaching:</span>
-            </dt>
-            <dd>
-              <ul>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  TESOL Methodologies
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Curriculum Development
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  CAIE English Language
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Student Assessment
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <dl class="flex flex-col sm:flex-row gap-1">
-            <dt class="min-w-40">
-              <span class="block text-sm text-gray-500 dark:text-neutral-500">Languages:</span>
-            </dt>
-            <dd>
-              <ul>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  English (Native)
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Bengali (Native)
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <dl class="flex flex-col sm:flex-row gap-1">
-            <dt class="min-w-40">
-              <span class="block text-sm text-gray-500 dark:text-neutral-500">Technical:</span>
-            </dt>
-            <dd>
-              <ul>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Microsoft Office Suite
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Educational Technology
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Online Learning Platforms
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <dl class="flex flex-col sm:flex-row gap-1">
-            <dt class="min-w-40">
-              <span class="block text-sm text-gray-500 dark:text-neutral-500">Soft Skills:</span>
-            </dt>
-            <dd>
-              <ul>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Strong communication
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Problem-solving
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Leadership
-                </li>
-                <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                  Time management
-                </li>
-              </ul>
-            </dd>
-          </dl>
-        </div>
-      </div>
-
-      <!-- 6. AWARDS & ACHIEVEMENTS -->
-      <div class="my-10 sm:my-14" id="achievements">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Awards & Achievements
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              ATN BANGLA Television National Debate Championship
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Champion
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2022
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Harvard College World School Invitational
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Best Judge Award
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2021
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              England and Wales World School Debating Championship International
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Best Judge Award
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2021
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              DUDS World Tourism Day Inter University National Debating Competition
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Champion and Best Speaker of the Final
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2022
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Dhaka University - Bangabandhu Inter Club National Debating Competition
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Champion
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2021
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Noakhali Science and Technology University Inter-University National Debating Competition
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Champion
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2022
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Malaysian Institute for Debate and Public Speaking (MIDP) International Scholastic Debating Championship
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Best Judge Award
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2021
-              </p>
-            </div>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              London Juniors Debating Competition
-            </h3>
-            <div class="flex justify-between items-center">
-              <p class="text-sm text-gray-600 dark:text-neutral-400">
-                Best Judge Award
-              </p>
-              <p class="text-xs text-gray-500 dark:text-neutral-500">
-                2022
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. PROFESSIONAL CERTIFICATIONS -->
-      <div class="mt-10 sm:mt-14">
-        <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
-          Professional Certifications
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-          <div class="sm:-ms-4 py-6 sm:px-4">
-            <blockquote>
-              <span class="text-sm text-gray-800 dark:text-neutral-200">
-                Microsoft Office Complete Course (Computer Fundamentals) - Completed two months
-                long training under The Islamic Development Bank-Bangladesh Islamic Solidarity
-                Educational Wakf (IsDB-BISEW) IT Scholarship Programme.
-              </span>
-              <footer class="mt-3">
-                <div class="text-xs text-gray-500 dark:text-neutral-500">IsDB-BISEW</div>
-              </footer>
-            </blockquote>
-          </div>
-
-          <div class="py-6 sm:px-4">
-            <blockquote>
-              <span class="text-sm text-gray-800 dark:text-neutral-200">
-                British Council Active Citizen Youth Leadership Training (2019) - Completed a three-day
-                long training.
-              </span>
-              <footer class="mt-3">
-                <div class="text-xs text-gray-500 dark:text-neutral-500">British Council</div>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. EXTRACURRICULAR ACTIVITIES -->
-      <div class="my-10 sm:my-14">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Extracurricular Activities
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Bangladesh Debate Federation (BDF)
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
-              English Debate Secretary, Central Committee
-            </p>
-            <p class="text-xs text-gray-500 dark:text-neutral-500">
-              September 2023 – December 2025
-            </p>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Premier University Debating Society
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
-              General Secretary
-            </p>
-            <p class="text-xs text-gray-500 dark:text-neutral-500">
-              January 2020 – December 2022
-            </p>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              World Literacy Foundation
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
-              Country Ambassador of Bangladesh
-            </p>
-            <p class="text-xs text-gray-500 dark:text-neutral-500">
-              April 2019 – December 2020
-            </p>
-          </div>
-
-          <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
-            <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
-              Stop Bullying Start Appreciating
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
-              Founder
-            </p>
-            <p class="text-xs text-gray-500 dark:text-neutral-500">
-              January 2020 – December 2022
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. PROJECTS/PORTFOLIO -->
-      <div class="mt-10 sm:mt-14" id="projects">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Projects & Portfolio
-        </h2>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="0">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/1.jpeg" alt="Project 1">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+          <!-- Timeline -->
+          <div>
+            <!-- Current Position -->
+            <div class="group relative flex gap-x-5">
               <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
+                class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+                <div class="relative z-10 size-6 flex justify-center items-center">
+                  <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
+                    src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png"
+                    alt="Premier University Logo">
+                </div>
+              </div>
+              <div class="grow pb-8 group-last:pb-0">
+                <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+                  2023 - Present
+                </h3>
+                <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
+                  Lecturer, Premier University Chittagong
+                </p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                  Teaching English Language and Literature to undergraduate students with focus on innovative
+                  pedagogical approaches.
+                </p>
+                <ul class="list-disc ms-6 mt-3 space-y-1.5">
+                  <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
+                    Developed and delivered comprehensive English language curriculum
+                  </li>
+                  <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
+                    Mentored students in academic and extracurricular activities
+                  </li>
+                  <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">
+                    Conducted research in TESOL methodologies
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
 
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="1">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/2.jpeg" alt="Project 2">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+            <!-- Previous Position -->
+            <div class="group relative flex gap-x-5">
               <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
+                class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+                <div class="relative z-10 size-6 flex justify-center items-center">
+                  <img class="shrink-0 size-6 text-gray-600 dark:text-neutral-400" width="36" height="36"
+                    src="src/assets/PIS-logo.jpg" alt="Presidency International School Logo">
+                </div>
+              </div>
+              <div class="grow pb-8 group-last:pb-0">
+                <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+                  May 5, 2024 - October 31, 2024
+                </h3>
+                <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
+                  CAIE English Language Teacher, Presidency International School
+                </p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                  Taught Cambridge Assessment International Education (CAIE) English Language curriculum to secondary
+                  students.
+                </p>
               </div>
             </div>
-          </div>
 
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="2">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/3.jpeg" alt="Project 3">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+            <!-- Previous Position -->
+            <div class="group relative flex gap-x-5">
               <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="3">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/4.jpeg" alt="Project 4">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
-              <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="4">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/5.jpeg" alt="Project 5">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
-              <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item" data-gallery-index="5">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
-              src="src/assets/nikash.png" alt="Project 6">
-            <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
-              <div
-                class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <span class="text-xs">View</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Gallery Modal -->
-      <div id="gallery-modal" class="gallery-modal">
-        <div class="gallery-modal-content">
-          <button class="gallery-close" id="gallery-close">&times;</button>
-          <button class="gallery-nav gallery-prev" id="gallery-prev">‹</button>
-          <button class="gallery-nav gallery-next" id="gallery-next">›</button>
-          <img id="gallery-image" src="" alt="Gallery Image">
-          <div class="gallery-counter">
-            <span id="gallery-current">1</span> / <span id="gallery-total">6</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. TESTIMONIALS -->
-      <div class="mt-10 sm:mt-14">
-        <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
-          Testimonials
-        </h2>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-          <div class="sm:-ms-4 py-6 sm:px-4">
-            <blockquote>
-              <span class="text-sm text-gray-800 dark:text-neutral-200">
-                "Exceptional teacher with innovative methodologies. His dedication to student success is evident in every class."
-              </span>
-              <footer class="mt-3">
-                <div class="flex items-center gap-x-2">
-                  <img class="shrink-0 size-5 rounded-full"
-                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                    alt="Avatar">
-                  <div class="grow">
-                    <div class="text-xs text-gray-500 dark:text-neutral-500">Department Head</div>
+                class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+                <div class="relative z-10 size-6 flex justify-center items-center">
+                  <div
+                    class="shrink-0 size-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    AH
                   </div>
                 </div>
-              </footer>
-            </blockquote>
-          </div>
-
-          <div class="py-6 sm:px-4">
-            <blockquote>
-              <span class="text-sm text-gray-800 dark:text-neutral-200">
-                "Outstanding debate coach and mentor. His guidance helped our team achieve national recognition."
-              </span>
-              <footer class="mt-3">
-                <div class="flex items-center gap-x-2">
-                  <img class="shrink-0 size-5 rounded-full"
-                    src="https://images.unsplash.com/photo-1671726203390-cdc4354ee2eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                    alt="Avatar">
-                  <div class="grow">
-                    <div class="text-xs text-gray-500 dark:text-neutral-500">Student Representative</div>
-                  </div>
-                </div>
-              </footer>
-            </blockquote>
+              </div>
+              <div class="grow pb-8 group-last:pb-0">
+                <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+                  January 22, 2023 - April 27, 2024
+                </h3>
+                <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
+                  CAIE English Language Teacher, Al-Hidaayah International School
+                </p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                  Delivered comprehensive English language instruction following Cambridge international curriculum
+                  standards.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 11. ARTICLES/PUBLICATIONS -->
-      <div class="my-10 sm:my-14">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Articles & Publications
-        </h2>
+        <!-- 4. EDUCATION SECTION -->
+        <div class="mt-10 sm:mt-14" id="education">
+          <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
+            Education
+          </h2>
 
-        <ul class="space-y-10">
-          <li>
-            <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
-              2025
-            </p>
-            <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
-              Students' Perspectives on Translanguaging Practices in English History Classes at a Private University, Bangladesh
-            </h5>
-            <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-              An action research study investigating the effectiveness of translanguaging practices in English History courses, examining how strategic use of Bengali alongside English affects students' understanding and engagement.
-            </p>
-            <p class="mt-1 text-xs text-gray-400 dark:text-neutral-600">
-              DOI: <a href="https://doi.org/10.3126/ojes.v16i1.81549" class="underline hover:text-gray-600 dark:hover:text-neutral-400">https://doi.org/10.3126/ojes.v16i1.81549</a>
-            </p>
-            <p class="mt-1 text-xs text-gray-400 dark:text-neutral-600">
-              Keywords: Translanguaging, content-based instruction, English as a second language, history teaching
-            </p>
-            <p class="mt-1">
-              <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="https://doi.org/10.3126/ojes.v16i1.81549">
-                Read full article
-              </a>
-            </p>
-          </li>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Master's Degree -->
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <img class="shrink-0 size-10 mb-3" width="40" height="40"
+                src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
+              <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+                2023-2024
+              </h3>
+              <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
+                M.A. (TESOL) in Teaching English to Speakers of Other Languages
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                Premier University, Chattogram
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                Result: 3.62
+              </p>
+            </div>
 
-          <li>
-            <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
-              2024
-            </p>
-            <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
-              Modern Approaches to TESOL in Digital Learning Environments
-            </h5>
-            <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-              Exploring innovative teaching methodologies for English language learners in the digital age.
-            </p>
-            <p class="mt-1">
-              <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="#">
-                Continue reading
-              </a>
-            </p>
-          </li>
+            <!-- Bachelor's Degree -->
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <img class="shrink-0 size-10 mb-3" width="40" height="40"
+                src="https://puc.ac.bd/Content/new-template-assets/images/puc_logo.png" alt="Premier University Logo">
+              <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+                2021
+              </h3>
+              <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">
+                B.A. (HONS.) in English Language and Literature
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                Premier University, Chattogram
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                Result: 3.82
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <li>
-            <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
-              2023
-            </p>
-            <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
-              The Role of Debate in Language Learning
-            </h5>
-            <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-              How competitive debate enhances language acquisition and critical thinking skills.
-            </p>
-            <p class="mt-1">
-              <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="#">
-                Continue reading
-              </a>
-            </p>
-          </li>
-        </ul>
-      </div>
+        <!-- 5. SKILLS SECTION -->
+        <div class="my-10 sm:my-14" id="skills">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Skills
+          </h2>
 
-      <!-- 12. CONTACT FORM -->
-      <div class="my-10 sm:my-14" id="contact">
-        <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
-          Get In Touch
-        </h2>
+          <div class="space-y-3">
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500 dark:text-neutral-500">Teaching:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    TESOL Methodologies
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Curriculum Development
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    CAIE English Language
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Student Assessment
+                  </li>
+                </ul>
+              </dd>
+            </dl>
 
-        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8 max-w-2xl">
-          Feel free to reach out for collaboration opportunities, academic discussions, or any inquiries. I'd love to hear from you!
-        </p>
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500 dark:text-neutral-500">Languages:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    English (Native)
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Bengali (Native)
+                  </li>
+                </ul>
+              </dd>
+            </dl>
 
-        <!-- Contact Form -->
-        <div class="max-w-2xl">
-          <form id="contact-form" class="space-y-4">
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500 dark:text-neutral-500">Technical:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Microsoft Office Suite
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Educational Technology
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Online Learning Platforms
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500 dark:text-neutral-500">Soft Skills:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Strong communication
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Problem-solving
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Leadership
+                  </li>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
+                    Time management
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- 6. AWARDS & ACHIEVEMENTS -->
+        <div class="my-10 sm:my-14" id="achievements">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Awards & Achievements
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="achievements-grid">
+            <!-- First row - always visible -->
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                ATN BANGLA Television National Debate Championship
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Champion
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2022
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Harvard College World School Invitational
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Best Judge Award
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2021
+                </p>
+              </div>
+            </div>
+
+            <!-- Additional achievements - hidden by default -->
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                England and Wales World School Debating Championship International
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Best Judge Award
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2021
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                DUDS World Tourism Day Inter University National Debating Competition
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Champion and Best Speaker of the Final
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2022
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Dhaka University - Bangabandhu Inter Club National Debating Competition
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Champion
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2021
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Noakhali Science and Technology University Inter-University National Debating Competition
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Champion
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2022
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Malaysian Institute for Debate and Public Speaking (MIDP) International Scholastic Debating Championship
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Best Judge Award
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2021
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700 achievement-item hidden">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                London Juniors Debating Competition
+              </h3>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                  Best Judge Award
+                </p>
+                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                  2022
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Load More Button -->
+          <div class="mt-6 text-center">
+            <button id="load-more-achievements"
+              class="inline-flex items-center gap-x-2 py-2 px-4 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
+              <span class="load-more-text">Load More</span>
+              <svg class="shrink-0 size-4 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. PROFESSIONAL CERTIFICATIONS -->
+        <div class="mt-10 sm:mt-14">
+          <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
+            Professional Certifications
+          </h2>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+            <div class="sm:-ms-4 py-6 sm:px-4">
+              <blockquote>
+                <span class="text-sm text-gray-800 dark:text-neutral-200">
+                  Microsoft Office Complete Course (Computer Fundamentals) - Completed two months
+                  long training under The Islamic Development Bank-Bangladesh Islamic Solidarity
+                  Educational Wakf (IsDB-BISEW) IT Scholarship Programme.
+                </span>
+                <footer class="mt-3">
+                  <div class="text-xs text-gray-500 dark:text-neutral-500">IsDB-BISEW</div>
+                </footer>
+              </blockquote>
+            </div>
+
+            <div class="py-6 sm:px-4">
+              <blockquote>
+                <span class="text-sm text-gray-800 dark:text-neutral-200">
+                  British Council Active Citizen Youth Leadership Training (2019) - Completed a three-day
+                  long training.
+                </span>
+                <footer class="mt-3">
+                  <div class="text-xs text-gray-500 dark:text-neutral-500">British Council</div>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. EXTRACURRICULAR ACTIVITIES -->
+        <div class="my-10 sm:my-14">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Extracurricular Activities
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Bangladesh Debate Federation (BDF)
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+                English Debate Secretary, Central Committee
+              </p>
+              <p class="text-xs text-gray-500 dark:text-neutral-500">
+                September 2023 – December 2025
+              </p>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Premier University Debating Society
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+                General Secretary
+              </p>
+              <p class="text-xs text-gray-500 dark:text-neutral-500">
+                January 2020 – December 2022
+              </p>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                World Literacy Foundation
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+                Country Ambassador of Bangladesh
+              </p>
+              <p class="text-xs text-gray-500 dark:text-neutral-500">
+                April 2019 – December 2020
+              </p>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg dark:border-neutral-700">
+              <h3 class="mb-3 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                Stop Bullying Start Appreciating
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+                Founder
+              </p>
+              <p class="text-xs text-gray-500 dark:text-neutral-500">
+                January 2020 – December 2022
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. PROJECTS/PORTFOLIO -->
+        <div class="mt-10 sm:mt-14" id="projects">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Projects & Portfolio
+          </h2>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="0">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/1.jpeg" alt="Project 1">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="1">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/2.jpeg" alt="Project 2">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="2">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/3.jpeg" alt="Project 3">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="3">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/4.jpeg" alt="Project 4">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="4">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/5.jpeg" alt="Project 5">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group block relative overflow-hidden rounded-lg cursor-pointer gallery-item"
+              data-gallery-index="5">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+                src="src/assets/nikash.png" alt="Project 6">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">View</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="gallery-modal">
+          <div class="gallery-modal-content">
+            <button class="gallery-close" id="gallery-close">&times;</button>
+            <button class="gallery-nav gallery-prev" id="gallery-prev">‹</button>
+            <button class="gallery-nav gallery-next" id="gallery-next">›</button>
+            <img id="gallery-image" src="" alt="Gallery Image">
+            <div class="gallery-counter">
+              <span id="gallery-current">1</span> / <span id="gallery-total">6</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. TESTIMONIALS -->
+        <div class="mt-10 sm:mt-14">
+          <h2 class="mb-3 font-medium text-gray-800 dark:text-neutral-200">
+            Testimonials
+          </h2>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+            <div class="sm:-ms-4 py-6 sm:px-4">
+              <blockquote>
+                <span class="text-sm text-gray-800 dark:text-neutral-200">
+                  "Exceptional teacher with innovative methodologies. His dedication to student success is evident in
+                  every class."
+                </span>
+                <footer class="mt-3">
+                  <div class="flex items-center gap-x-2">
+                    <img class="shrink-0 size-5 rounded-full"
+                      src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                      alt="Avatar">
+                    <div class="grow">
+                      <div class="text-xs text-gray-500 dark:text-neutral-500">Department Head</div>
+                    </div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+
+            <div class="py-6 sm:px-4">
+              <blockquote>
+                <span class="text-sm text-gray-800 dark:text-neutral-200">
+                  "Outstanding debate coach and mentor. His guidance helped our team achieve national recognition."
+                </span>
+                <footer class="mt-3">
+                  <div class="flex items-center gap-x-2">
+                    <img class="shrink-0 size-5 rounded-full"
+                      src="https://images.unsplash.com/photo-1671726203390-cdc4354ee2eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                      alt="Avatar">
+                    <div class="grow">
+                      <div class="text-xs text-gray-500 dark:text-neutral-500">Student Representative</div>
+                    </div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. ARTICLES/PUBLICATIONS -->
+        <div class="my-10 sm:my-14">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Articles & Publications
+          </h2>
+
+          <ul class="space-y-10">
+            <li>
+              <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
+                2025
+              </p>
+              <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
+                Students' Perspectives on Translanguaging Practices in English History Classes at a Private University,
+                Bangladesh
+              </h5>
+              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                An action research study investigating the effectiveness of translanguaging practices in English History
+                courses, examining how strategic use of Bengali alongside English affects students' understanding and
+                engagement.
+              </p>
+              <p class="mt-1 text-xs text-gray-400 dark:text-neutral-600">
+                DOI: <a href="https://doi.org/10.3126/ojes.v16i1.81549"
+                  class="underline hover:text-gray-600 dark:hover:text-neutral-400">https://doi.org/10.3126/ojes.v16i1.81549</a>
+              </p>
+              <p class="mt-1 text-xs text-gray-400 dark:text-neutral-600">
+                Keywords: Translanguaging, content-based instruction, English as a second language, history teaching
+              </p>
+              <p class="mt-1">
+                <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                  href="https://doi.org/10.3126/ojes.v16i1.81549">
+                  Read full article
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
+                2024
+              </p>
+              <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
+                Modern Approaches to TESOL in Digital Learning Environments
+              </h5>
+              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                Exploring innovative teaching methodologies for English language learners in the digital age.
+              </p>
+              <p class="mt-1">
+                <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                  href="#">
+                  Continue reading
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <p class="mb-2 text-sm text-gray-500 dark:text-neutral-500">
+                2023
+              </p>
+              <h5 class="font-medium text-sm text-gray-800 dark:text-neutral-200">
+                The Role of Debate in Language Learning
+              </h5>
+              <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                How competitive debate enhances language acquisition and critical thinking skills.
+              </p>
+              <p class="mt-1">
+                <a class="text-sm text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+                  href="#">
+                  Continue reading
+                </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 12. CONTACT FORM -->
+        <div class="my-10 sm:my-14" id="contact">
+          <h2 class="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+            Get In Touch
+          </h2>
+
+          <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8 max-w-2xl">
+            Feel free to reach out for collaboration opportunities, academic discussions, or any inquiries. I'd love to
+            hear from you!
+          </p>
+
+          <!-- Contact Form -->
+          <div class="max-w-2xl">
+            <form id="contact-form" class="space-y-4">
               <!-- Name Field -->
               <div>
                 <label for="contact-name" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
@@ -1284,20 +1345,25 @@
                 <button type="submit" id="contact-submit"
                   class="w-full inline-flex justify-center items-center gap-x-2 py-3 px-4 text-sm font-semibold rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200 dark:focus:bg-neutral-200 transition-colors">
                   <span id="submit-text">Send Message</span>
-                  <svg id="submit-icon" class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
+                  <svg id="submit-icon" class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
-                  <div id="submit-loading" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
+                  <div id="submit-loading" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-current">
+                  </div>
                 </button>
               </div>
 
               <!-- Success/Error Messages -->
-              <div id="contact-message-success" class="hidden p-3 bg-green-100 border border-green-200 text-green-800 rounded-lg text-sm dark:bg-green-900/20 dark:border-green-900/30 dark:text-green-400">
+              <div id="contact-message-success"
+                class="hidden p-3 bg-green-100 border border-green-200 text-green-800 rounded-lg text-sm dark:bg-green-900/20 dark:border-green-900/30 dark:text-green-400">
                 Thank you! Your message has been sent successfully. I'll get back to you soon.
               </div>
-              
-              <div id="contact-message-error" class="hidden p-3 bg-red-100 border border-red-200 text-red-800 rounded-lg text-sm dark:bg-red-900/20 dark:border-red-900/30 dark:text-red-400">
+
+              <div id="contact-message-error"
+                class="hidden p-3 bg-red-100 border border-red-200 text-red-800 rounded-lg text-sm dark:bg-red-900/20 dark:border-red-900/30 dark:text-red-400">
                 Sorry, there was an error sending your message. Please try again or contact me directly via email.
               </div>
             </form>
@@ -1316,13 +1382,15 @@
             </div>
 
             <ul class="flex flex-wrap items-center">
-              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+              <li
+                class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
                 <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
                   href="https://www.linkedin.com/in/mdmahadirahman" target="_blank">
                   LinkedIn
                 </a>
               </li>
-              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+              <li
+                class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
                 <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
                   href="mailto:memahadirahman@gmail.com">
                   Email
@@ -1332,27 +1400,30 @@
           </div>
         </div>
       </footer>
-    </div>
+  </div>
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
   <!-- Sticky Theme Toggle -->
   <div id="sticky-theme-toggle" class="fixed bottom-6 right-6 z-40 transition-all duration-300">
-    <div class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+    <div
+      class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-full shadow-lg hover:shadow-xl transition-shadow">
       <!-- Dark Mode Button (shows in light mode) -->
       <button type="button" id="theme-dark-btn"
         class="flex justify-center items-center w-8 h-8 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700"
         title="Switch to dark mode">
-        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
         </svg>
       </button>
-      
+
       <!-- Light Mode Button (shows in dark mode) -->
       <button type="button" id="theme-light-btn"
         class="hidden justify-center items-center w-8 h-8 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700"
         title="Switch to light mode">
-        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"></circle>
           <path d="M12 2v2"></path>
           <path d="M12 20v2"></path>
@@ -1370,15 +1441,15 @@
 
   <!-- JS Implementing Plugins -->
   <script src="https://cdn.jsdelivr.net/npm/preline/dist/preline.min.js"></script>
-  
+
   <!-- Custom Navigation Script -->
   <script>
     // Initialize Preline components
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       if (window.HSStaticMethods) {
         window.HSStaticMethods.autoInit();
       }
-      
+
       // Force show navigation on desktop
       function checkAndShowNavigation() {
         const nav = document.getElementById('hs-navbar-header-floating');
@@ -1396,16 +1467,16 @@
           nav.style.height = '';
         }
       }
-      
+
       // Check on load and resize
       checkAndShowNavigation();
       window.addEventListener('resize', checkAndShowNavigation);
-      
+
       // Ensure mobile menu is properly hidden on page load
       const mobileMenu = document.getElementById('hs-navbar-header-floating');
       const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
       const navElement = document.querySelector('nav');
-      
+
       if (mobileMenu && toggleButton) {
         // Only hide on mobile
         if (window.innerWidth < 768) {
@@ -1416,12 +1487,12 @@
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.classList.remove('hs-collapse-open');
         toggleButton.classList.remove('open'); // Remove any leftover classes
-        
+
         // Remove mobile menu styling from nav
         if (navElement) {
           navElement.classList.remove('mobile-menu-open');
         }
-        
+
         // Ensure icons are in correct initial state
         const allSvgs = toggleButton.querySelectorAll('svg');
         allSvgs.forEach(svg => {
@@ -1437,26 +1508,26 @@
         });
       }
     });
-    
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
-        
+
         if (targetSection) {
           const headerHeight = document.querySelector('header').offsetHeight;
           const targetPosition = targetSection.offsetTop - headerHeight - 20;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
           });
-          
+
           // Update active nav item
           updateActiveNav(this);
-          
+
           // Only close mobile menu on mobile devices
           if (window.innerWidth < 768) {
             closeMobileMenuAndResetButton();
@@ -1464,50 +1535,50 @@
         }
       });
     });
-    
+
     // Close mobile menu function
     function closeMobileMenu() {
       const mobileMenu = document.getElementById('hs-navbar-header-floating');
       const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
       const nav = document.querySelector('nav');
-      
+
       if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('block');
         mobileMenu.style.height = '';  // Remove inline height style
-        
+
         if (toggleButton) {
           toggleButton.setAttribute('aria-expanded', 'false');
           toggleButton.classList.remove('hs-collapse-open');
         }
-        
+
         // Remove mobile menu styling from nav
         if (nav) {
           nav.classList.remove('mobile-menu-open');
         }
       }
     }
-    
+
     // Enhanced function specifically for navigation clicks to ensure button state reset
     function closeMobileMenuAndResetButton() {
       const mobileMenu = document.getElementById('hs-navbar-header-floating');
       const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
       const nav = document.querySelector('nav');
-      
+
       // Close the menu
       if (mobileMenu) {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('block');
         mobileMenu.style.height = '';
       }
-      
+
       // Reset button state completely
       if (toggleButton) {
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.classList.remove('hs-collapse-open');
         // Remove any Preline classes that might interfere
         toggleButton.classList.remove('open');
-        
+
         // Find icons using a more reliable method
         const allSvgs = toggleButton.querySelectorAll('svg');
         allSvgs.forEach(svg => {
@@ -1522,13 +1593,13 @@
           }
         });
       }
-      
+
       // Remove mobile menu styling from nav
       if (nav) {
         nav.classList.remove('mobile-menu-open');
       }
     }
-    
+
     // Update active navigation item
     function updateActiveNav(activeLink) {
       // Remove active state from all nav links
@@ -1537,67 +1608,67 @@
         link.classList.add('border-transparent', 'text-gray-500', 'dark:text-neutral-400');
         link.removeAttribute('aria-current');
       });
-      
+
       // Add active state to clicked link
       activeLink.classList.remove('border-transparent', 'text-gray-500', 'dark:text-neutral-400');
       activeLink.classList.add('border-gray-800', 'font-medium', 'text-gray-800', 'dark:border-neutral-200', 'dark:text-neutral-200');
       activeLink.setAttribute('aria-current', 'page');
     }
-    
+
     // Highlight active section on scroll
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const sections = ['home', 'experience', 'education', 'skills', 'achievements', 'projects', 'contact'];
       const headerHeight = document.querySelector('header').offsetHeight;
       const scrollPosition = window.scrollY + headerHeight + 100;
-      
+
       let currentSection = 'home';
-      
+
       sections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section && section.offsetTop <= scrollPosition) {
           currentSection = sectionId;
         }
       });
-      
+
       // Update active nav item based on scroll position
       const activeNavLink = document.querySelector(`a[href="#${currentSection}"]`);
       if (activeNavLink) {
         updateActiveNav(activeNavLink);
       }
     });
-    
+
     // Close mobile menu when clicking outside (only on mobile)
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       const mobileMenu = document.getElementById('hs-navbar-header-floating');
       const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
       const nav = document.querySelector('nav');
-      
+
       if (window.innerWidth < 768 && mobileMenu && !nav.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
         closeMobileMenuAndResetButton();
       }
     });
-    
+
     // Improve mobile menu accessibility
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeMobileMenuAndResetButton();
       }
     });
-    
+
     // Manual toggle button handler (backup for Preline)
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
       const mobileMenu = document.getElementById('hs-navbar-header-floating');
       const nav = document.querySelector('nav');
-      
+
       if (toggleButton && mobileMenu) {
-        toggleButton.addEventListener('click', function(e) {
+        toggleButton.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
-          
+
           const isExpanded = this.getAttribute('aria-expanded') === 'true';
           const allSvgs = this.querySelectorAll('svg');
-          
+
           if (isExpanded) {
             // Close menu
             mobileMenu.classList.add('hidden');
@@ -1605,12 +1676,12 @@
             mobileMenu.style.height = '';
             this.setAttribute('aria-expanded', 'false');
             this.classList.remove('hs-collapse-open');
-            
+
             // Remove mobile menu styling from nav
             if (nav) {
               nav.classList.remove('mobile-menu-open');
             }
-            
+
             // Show hamburger, hide close icon
             allSvgs.forEach(svg => {
               if (svg.classList.contains('hs-collapse-open:hidden')) {
@@ -1630,12 +1701,12 @@
             mobileMenu.style.height = 'auto';
             this.setAttribute('aria-expanded', 'true');
             this.classList.add('hs-collapse-open');
-            
+
             // Add mobile menu styling to nav
             if (nav) {
               nav.classList.add('mobile-menu-open');
             }
-            
+
             // Hide hamburger, show close icon
             allSvgs.forEach(svg => {
               if (svg.classList.contains('hs-collapse-open:hidden')) {
@@ -1652,9 +1723,9 @@
         });
       }
     });
-    
+
     // Gallery functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const galleryItems = document.querySelectorAll('.gallery-item');
       const galleryModal = document.getElementById('gallery-modal');
       const galleryImage = document.getElementById('gallery-image');
@@ -1663,7 +1734,7 @@
       const galleryNext = document.getElementById('gallery-next');
       const galleryCurrent = document.getElementById('gallery-current');
       const galleryTotal = document.getElementById('gallery-total');
-      
+
       console.log('Gallery initialization:', {
         galleryItems: galleryItems.length,
         galleryModal: !!galleryModal,
@@ -1672,9 +1743,9 @@
         galleryPrev: !!galleryPrev,
         galleryNext: !!galleryNext
       });
-      
+
       let currentImageIndex = 0;
-      
+
       // Build images array dynamically from the gallery items
       const images = [];
       galleryItems.forEach((item, index) => {
@@ -1686,18 +1757,18 @@
           });
         }
       });
-      
+
       console.log('Gallery images loaded:', images);
-      
+
       // Set total images count
       if (galleryTotal) {
         galleryTotal.textContent = images.length;
       }
-      
+
       // Open gallery when clicking on an image
       galleryItems.forEach((item, index) => {
         console.log('Setting up gallery item:', index);
-        item.addEventListener('click', function(e) {
+        item.addEventListener('click', function (e) {
           e.preventDefault();
           console.log('Gallery item clicked:', index);
           currentImageIndex = index;
@@ -1705,48 +1776,48 @@
         });
       });
       galleryItems.forEach((item, index) => {
-        item.addEventListener('click', function(e) {
+        item.addEventListener('click', function (e) {
           e.preventDefault();
           currentImageIndex = index;
           openGallery();
         });
       });
-      
+
       // Close gallery
       if (galleryClose) {
         galleryClose.addEventListener('click', closeGallery);
       }
-      
+
       // Close gallery when clicking outside image
       if (galleryModal) {
-        galleryModal.addEventListener('click', function(e) {
+        galleryModal.addEventListener('click', function (e) {
           if (e.target === galleryModal) {
             closeGallery();
           }
         });
       }
-      
+
       // Previous image
       if (galleryPrev) {
-        galleryPrev.addEventListener('click', function() {
+        galleryPrev.addEventListener('click', function () {
           currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
           updateGalleryImage();
         });
       }
-      
+
       // Next image
       if (galleryNext) {
-        galleryNext.addEventListener('click', function() {
+        galleryNext.addEventListener('click', function () {
           currentImageIndex = (currentImageIndex + 1) % images.length;
           updateGalleryImage();
         });
       }
-      
+
       // Keyboard navigation
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (!galleryModal.classList.contains('active')) return;
-        
-        switch(e.key) {
+
+        switch (e.key) {
           case 'Escape':
             closeGallery();
             break;
@@ -1758,7 +1829,7 @@
             break;
         }
       });
-      
+
       function openGallery() {
         console.log('Opening gallery for image index:', currentImageIndex);
         if (galleryModal) {
@@ -1767,7 +1838,7 @@
           updateGalleryImage();
         }
       }
-      
+
       function closeGallery() {
         console.log('Closing gallery');
         if (galleryModal) {
@@ -1775,39 +1846,39 @@
           document.body.style.overflow = ''; // Restore scrolling
         }
       }
-      
+
       function updateGalleryImage() {
         const image = images[currentImageIndex];
         console.log('Loading image:', image.src);
-        
+
         if (galleryImage) {
           galleryImage.src = image.src;
           galleryImage.alt = image.alt;
         }
-        
+
         if (galleryCurrent) {
           galleryCurrent.textContent = currentImageIndex + 1;
         }
-        
+
         // Add error handling
         if (galleryImage) {
-          galleryImage.onerror = function() {
+          galleryImage.onerror = function () {
             console.error('Failed to load image:', image.src);
           };
-          
-          galleryImage.onload = function() {
+
+          galleryImage.onload = function () {
             console.log('Image loaded successfully:', image.src);
           };
         }
-        
+
         // Update navigation buttons
         if (galleryPrev) galleryPrev.disabled = false;
         if (galleryNext) galleryNext.disabled = false;
       }
     });
-    
+
     // Contact Form Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const contactForm = document.getElementById('contact-form');
       const submitBtn = document.getElementById('contact-submit');
       const submitText = document.getElementById('submit-text');
@@ -1815,35 +1886,35 @@
       const submitLoading = document.getElementById('submit-loading');
       const successMessage = document.getElementById('contact-message-success');
       const errorMessage = document.getElementById('contact-message-error');
-      
+
       if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', async function (e) {
           e.preventDefault();
-          
+
           // Get form data
           const formData = new FormData(contactForm);
           const name = formData.get('name');
           const email = formData.get('email');
           const subject = formData.get('subject') || 'Contact from Portfolio';
           const message = formData.get('message');
-          
+
           // Validate required fields
           if (!name || !email || !message) {
             showError('Please fill in all required fields.');
             return;
           }
-          
+
           // Validate email format
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
             showError('Please enter a valid email address.');
             return;
           }
-          
+
           // Show loading state
           setSubmitState('loading');
           hideMessages();
-          
+
           try {
             // Send data to API endpoint
             const response = await fetch('/api/contact', {
@@ -1858,9 +1929,9 @@
                 message: message
               })
             });
-            
+
             const result = await response.json();
-            
+
             if (response.ok && result.success) {
               // Success
               showSuccess('Thank you! Your message has been sent successfully. I\'ll get back to you soon.');
@@ -1869,7 +1940,7 @@
               // API returned an error
               throw new Error(result.error || result.details || 'Failed to send message');
             }
-            
+
           } catch (error) {
             console.error('Error sending message:', error);
             showError('Sorry, there was an error sending your message. Please try again or contact me directly via email.');
@@ -1878,10 +1949,10 @@
           }
         });
       }
-      
+
       function setSubmitState(state) {
         if (!submitBtn || !submitText || !submitIcon || !submitLoading) return;
-        
+
         switch (state) {
           case 'loading':
             submitBtn.disabled = true;
@@ -1898,32 +1969,32 @@
             break;
         }
       }
-      
+
       function showSuccess(message) {
         if (successMessage) {
           successMessage.textContent = message;
           successMessage.classList.remove('hidden');
         }
       }
-      
+
       function showError(message) {
         if (errorMessage) {
           errorMessage.textContent = message;
           errorMessage.classList.remove('hidden');
         }
       }
-      
+
       function hideMessages() {
         if (successMessage) successMessage.classList.add('hidden');
         if (errorMessage) errorMessage.classList.add('hidden');
       }
     });
-    
+
     // Sticky Theme Toggle Functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const stickyToggle = document.getElementById('sticky-theme-toggle');
       const footer = document.querySelector('footer');
-      
+
       if (stickyToggle && footer) {
         // Hide/show theme toggle based on footer visibility
         const observer = new IntersectionObserver((entries) => {
@@ -1939,32 +2010,32 @@
         }, {
           rootMargin: '50px'
         });
-        
+
         observer.observe(footer);
-        
+
         // Add click handlers for the sticky theme toggle
         const darkBtn = document.getElementById('theme-dark-btn');
         const lightBtn = document.getElementById('theme-light-btn');
-        
+
         if (darkBtn) {
-          darkBtn.addEventListener('click', function() {
+          darkBtn.addEventListener('click', function () {
             document.documentElement.classList.add('dark');
             localStorage.setItem('hs_theme', 'dark');
             updateThemeButtons();
           });
         }
-        
+
         if (lightBtn) {
-          lightBtn.addEventListener('click', function() {
+          lightBtn.addEventListener('click', function () {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('hs_theme', 'light');
             updateThemeButtons();
           });
         }
-        
+
         function updateThemeButtons() {
           const isDark = document.documentElement.classList.contains('dark');
-          
+
           if (isDark) {
             // In dark mode: hide dark button, show light button
             darkBtn.classList.add('hidden');
@@ -1979,9 +2050,39 @@
             lightBtn.classList.remove('flex');
           }
         }
-        
+
         // Initialize theme button state
         updateThemeButtons();
+      }
+    });
+
+    // Load More Achievements Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadMoreBtn = document.getElementById('load-more-achievements');
+      const hiddenItems = document.querySelectorAll('.achievement-item.hidden');
+      const loadMoreText = loadMoreBtn.querySelector('.load-more-text');
+      const loadMoreIcon = loadMoreBtn.querySelector('svg');
+
+      if (loadMoreBtn && hiddenItems.length > 0) {
+        loadMoreBtn.addEventListener('click', function () {
+          const isExpanded = !hiddenItems[0].classList.contains('hidden');
+
+          if (isExpanded) {
+            // Collapse - hide all additional items
+            hiddenItems.forEach(item => {
+              item.classList.add('hidden');
+            });
+            loadMoreText.textContent = 'Load More';
+            loadMoreIcon.style.transform = 'rotate(0deg)';
+          } else {
+            // Expand - show all additional items
+            hiddenItems.forEach(item => {
+              item.classList.remove('hidden');
+            });
+            loadMoreText.textContent = 'Show Less';
+            loadMoreIcon.style.transform = 'rotate(180deg)';
+          }
+        });
       }
     });
   </script>
